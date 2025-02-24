@@ -2,7 +2,9 @@ import 'package:cosmos/cosmos.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:utkan_me/pages/home.dart';
+import 'package:utkan_me/theme/color.dart';
 
 class ProjectsPage extends StatelessWidget {
   const ProjectsPage({super.key});
@@ -11,14 +13,14 @@ class ProjectsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: SafeArea(
           child: Row(
             children: [
               Text(
                 "Utkan Aydın",
                 style: GoogleFonts.rubik(
-                    fontWeight: FontWeight.bold,
-                    color: const Color.fromARGB(255, 255, 86, 34)),
+                    fontWeight: FontWeight.bold, color: title_color),
               ),
               SizedBox(
                 width: 25,
@@ -39,6 +41,18 @@ class ProjectsPage extends StatelessWidget {
                 onTap: () {},
                 child: Text(
                   "Projelerim",
+                  style: GoogleFonts.poppins(fontSize: 20),
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              InkWell(
+                onTap: () async {
+                  await launchUrl(Uri.parse("https://blog.utkan.net"));
+                },
+                child: Text(
+                  "Blog",
                   style: GoogleFonts.poppins(fontSize: 20),
                 ),
               ),
@@ -80,7 +94,7 @@ class ProjectsPage extends StatelessWidget {
                                     CosmosAlert.showAnimatedDialog(
                                       context,
                                       "Yakında..",
-                                      "Yakında bir blog sistemi kurucağız. Ama şimdilik beklemen gerekiyor",
+                                      "Yakında TodoTap için Blog yazısı yayınlanacak!",
                                     );
                                   },
                                   child: Icon(Icons.notes_rounded)),
