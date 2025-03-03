@@ -1,6 +1,20 @@
 # CHANGELOG
 
-## [1.0.2] - 2025-02-25
+## [1.0.2] - 2025-03-04
+
+### Eklendi
+
+- Üst bar minimalleştirildi
+- Üst barda kalan "Utkan Aydın" yazısı ana sayfaya yönlendirilcek şekilde değiştirildi
+- Projeler ekranında tasarımsal iyileştirmeler yapıldı
+- Projeler sayfasındaki projeler artık GitHub'a yönlendiricek ve açık kaynaklar görüntülenicek
+- Projeler ekranında GitHub'da görünen bazı bilgiler yer alıca (örneğin : Commitler, yazılım dili/dilleri, lisans vb.)
+
+### Düzeltildi
+
+- Ana ekranın bazı tasarımsal hataları düzeltildi ve iyileştirildi
+
+## [1.0.2] - 2025-03-03
 
 ### Eklendi
 

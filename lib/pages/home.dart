@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cosmos/cosmos.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -15,47 +16,19 @@ class HomePage extends StatelessWidget {
           automaticallyImplyLeading: false,
           title: SafeArea(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  "Utkan Aydın",
-                  style: GoogleFonts.rubik(
-                      fontWeight: FontWeight.bold, color: title_color),
-                ),
-                SizedBox(
-                  width: 25,
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    "Ana Sayfa",
-                    style: GoogleFonts.poppins(fontSize: 20),
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ProjectsPage()));
-                  },
-                  child: Text(
-                    "Projelerim",
-                    style: GoogleFonts.poppins(fontSize: 20),
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                InkWell(
-                  onTap: () async {
-                    await launch("https://blog.utkan.net");
-                  },
-                  child: Text(
-                    "Blog",
-                    style: GoogleFonts.poppins(fontSize: 20),
+                Center(
+                  child: InkWell(
+                    onTap: () {
+                      Get.to(() => HomePage());
+                    },
+                    child: Text(
+                      "Utkan Aydın",
+                      style: GoogleFonts.rubik(
+                          fontWeight: FontWeight.bold, color: title_color),
+                    ),
                   ),
                 ),
               ],
@@ -63,14 +36,19 @@ class HomePage extends StatelessWidget {
           ),
         ),
         body: CosmosBody(
-          scrollable: true,
+          scrollable: false,
           scrollDirection: Axis.vertical,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(
               child: Container(
                 width: 500,
                 height: 300,
-                color: const Color.fromARGB(49, 158, 158, 158),
+                decoration: BoxDecoration(
+                    color: const Color.fromARGB(49, 158, 158, 158),
+                    borderRadius: BorderRadius.circular(25)),
+
                 padding:
                     EdgeInsets.all(20), // Padding'i Container'a uyguluyoruz
                 child: Column(
@@ -89,23 +67,11 @@ class HomePage extends StatelessWidget {
                         style: GoogleFonts.montserrat(
                             fontSize: 22, fontWeight: FontWeight.w400)),
                     SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
-                    Row(
-                      children: [
-                        InkWell(
-                          onTap: () async {
-                            await launch("mailto:utkan@utkan.net");
-                          },
-                          child: Icon(
-                            Icons.email,
-                            color: Colors.deepOrange,
-                          ),
-                        ),
-                      ],
-                    ),
+
                     Center(
-                      child: Column(
+                      child: Row(
                         children: [
                           InkWell(
                             onTap: () async {
@@ -116,9 +82,32 @@ class HomePage extends StatelessWidget {
                                 style: GoogleFonts.montserrat(
                                     fontSize: 20, fontWeight: FontWeight.w800)),
                           ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          InkWell(
+                            onTap: () async {
+                              await launch("mailto:utkan@utkan.net");
+                            },
+                            child: Icon(
+                              Icons.email,
+                              color: Colors.deepOrange,
+                            ),
+                          ),
                         ],
                       ),
-                    )
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProjectsPage()));
+                      },
+                      child: Text("Projelerim",
+                          style: GoogleFonts.montserrat(
+                              fontSize: 18, fontWeight: FontWeight.w500)),
+                    ),
                   ],
                 ),
               ),
