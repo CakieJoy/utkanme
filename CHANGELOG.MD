@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [1.0.2] - 2025-02-25
+
+### Eklendi
+
+- Ana ekranda tasarımsal iyileştirilmeler yapıldı
+- Mail ile iletişim eklendi
+
 ## [1.0.1] - 2025-02-25
 
 ### Eklendi

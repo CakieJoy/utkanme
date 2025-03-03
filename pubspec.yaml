@@ -38,6 +38,9 @@ dependencies:
   google_fonts: ^6.2.1
   get: ^4.6.6
   url_launcher: ^6.3.1
+  flutter_vector_icons: ^2.0.0
+  icon_icons: ^1.0.4
+  social_media_buttons: ^1.0.0
 
 dev_dependencies:
   flutter_test:
