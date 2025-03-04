@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cosmos/cosmos.dart';
@@ -42,74 +43,153 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(
-              child: Container(
-                width: 500,
-                height: 300,
-                decoration: BoxDecoration(
-                    color: const Color.fromARGB(49, 158, 158, 158),
-                    borderRadius: BorderRadius.circular(25)),
+              child: Column(
+                children: [
+                  Container(
+                    width: 500,
+                    height: 300,
+                    decoration: BoxDecoration(
+                        color: const Color.fromARGB(49, 158, 158, 158),
+                        borderRadius: BorderRadius.circular(25)),
 
-                padding:
-                    EdgeInsets.all(20), // Padding'i Container'a uyguluyoruz
-                child: Column(
-                  // CosmosBody yerine Column kullanıyoruz
-                  crossAxisAlignment:
-                      CrossAxisAlignment.start, // Metni sola yaslamak için
-                  children: [
-                    SizedBox(height: 10), // SizedBox'ı Column'un içine alıyoruz
-                    Text("Utkan Aydın",
-                        style: GoogleFonts.poppins(
-                            fontSize: 30, fontWeight: FontWeight.bold)),
-                    Text("CakieJoy olarakda bilinir.",
-                        style: GoogleFonts.poppins(
-                            fontSize: 10, fontWeight: FontWeight.w100)),
-                    Text("Flutter Android Developer",
-                        style: GoogleFonts.montserrat(
-                            fontSize: 22, fontWeight: FontWeight.w400)),
-                    SizedBox(
-                      height: 5,
-                    ),
+                    padding:
+                        EdgeInsets.all(20), // Padding'i Container'a uyguluyoruz
+                    child: Column(
+                      // CosmosBody yerine Column kullanıyoruz
+                      crossAxisAlignment:
+                          CrossAxisAlignment.start, // Metni sola yaslamak için
+                      children: [
+                        SizedBox(
+                            height: 10), // SizedBox'ı Column'un içine alıyoruz
+                        Text("Utkan Aydın",
+                            style: GoogleFonts.poppins(
+                                fontSize: 30, fontWeight: FontWeight.bold)),
+                        Text("CakieJoy olarakda bilinir.",
+                            style: GoogleFonts.poppins(
+                                fontSize: 10, fontWeight: FontWeight.w100)),
+                        Text("Flutter Android Developer",
+                            style: GoogleFonts.montserrat(
+                                fontSize: 22, fontWeight: FontWeight.w400)),
+                        SizedBox(
+                          height: 5,
+                        ),
 
-                    Center(
-                      child: Row(
-                        children: [
-                          InkWell(
-                            onTap: () async {
-                              await launch(
-                                  "https://github.com/cakiejoy/utkanme");
-                            },
-                            child: Text("Bu Site GitHub'da bulunuyor!",
-                                style: GoogleFonts.montserrat(
-                                    fontSize: 20, fontWeight: FontWeight.w800)),
+                        Center(
+                          child: Row(
+                            children: [
+                              InkWell(
+                                onTap: () async {
+                                  await launch(
+                                      "https://github.com/cakiejoy/utkanme");
+                                },
+                                child: Text("Bu Site GitHub'da bulunuyor!",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w800)),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              InkWell(
+                                onTap: () async {
+                                  await launch("mailto:utkan@utkan.net");
+                                },
+                                child: Icon(
+                                  Icons.email,
+                                  color: Colors.deepOrange,
+                                ),
+                              ),
+                            ],
                           ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          InkWell(
-                            onTap: () async {
-                              await launch("mailto:utkan@utkan.net");
-                            },
-                            child: Icon(
-                              Icons.email,
-                              color: Colors.deepOrange,
+                        ),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () async {
+                                await launch("https://github.com/cakiejoy");
+                              },
+                              child: SvgPicture.asset(
+                                "../../assets/github-brands.svg", // SVG dosyasının yolu
+                                width: 50, // İkon genişliği
+                                height: 30, // İkon yüksekliği
+                                colorFilter: const ColorFilter.mode(
+                                  Colors.deepOrange, // SVG rengini beyaz yap
+                                  BlendMode.srcIn,
+                                ),
+                              ),
                             ),
-                          ),
-                        ],
+                            SizedBox(
+                              width: 10,
+                            ),
+                            InkWell(
+                              onTap: () async {
+                                await launch(
+                                    "https://instagram.com/utkuaydnnnns");
+                              },
+                              child: SvgPicture.asset(
+                                "../../assets/insta.svg", // SVG dosyasının yolu
+                                width: 50, // İkon genişliği
+                                height: 30, // İkon yüksekliği
+                                colorFilter: const ColorFilter.mode(
+                                  Colors.deepOrange, // SVG rengini beyaz yap
+                                  BlendMode.srcIn,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            InkWell(
+                              onTap: () async {
+                                await launch("https://mastodon.social/@utkan");
+                              },
+                              child: SvgPicture.asset(
+                                "../../assets/mastodon-brands.svg", // SVG dosyasının yolu
+                                width: 50, // İkon genişliği
+                                height: 30, // İkon yüksekliği
+                                colorFilter: const ColorFilter.mode(
+                                  Colors.deepOrange, // SVG rengini beyaz yap
+                                  BlendMode.srcIn,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    width: 300,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        color: const Color.fromARGB(49, 158, 158, 158),
+                        borderRadius: BorderRadius.circular(125)),
+                    child: Center(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProjectsPage()));
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("Projelerim",
+                              style: GoogleFonts.montserrat(
+                                  fontSize: 20, fontWeight: FontWeight.w700)),
+                        ),
                       ),
                     ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ProjectsPage()));
-                      },
-                      child: Text("Projelerim",
-                          style: GoogleFonts.montserrat(
-                              fontSize: 18, fontWeight: FontWeight.w500)),
-                    ),
-                  ],
-                ),
+                  )
+                ],
               ),
             )
           ],

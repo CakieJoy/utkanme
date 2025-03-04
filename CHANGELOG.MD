@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## [1.1.1] - 2025-03-04
+
+### Eklendi
+
+- Sosyal medya ikonları eklendi
+- Sayfa değiştirmek için ayrı bir sekme açıldı
+
+### Düzeltildi
+
+- Yanlış eklenen commit sayısı düzeltildi
+- Dosya Yapısı : CHANGELOG.MD olan dosya artık CHANGELOG.md oldu dosya uzantısındaki Caps düzeltildi
+
 ## [1.1.0] - 2025-03-04
 
 ### Eklendi

@@ -83,7 +83,7 @@ class ProjectsPage extends StatelessWidget {
                         ),
                         Text("MIT Lisansı |", style: GoogleFonts.montserrat()),
                         SizedBox(width: 5),
-                        Text("8 Commit", style: GoogleFonts.montserrat())
+                        Text("11 Commit", style: GoogleFonts.montserrat())
                       ],
                     ),
                     Center(
