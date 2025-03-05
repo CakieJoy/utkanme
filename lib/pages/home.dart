@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cosmos/cosmos.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:utkan_me/pages/projects.dart';
 import 'package:utkan_me/theme/color.dart';
 
 class HomePage extends StatelessWidget {
@@ -47,7 +46,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   Container(
                     width: 500,
-                    height: 300,
+                    height: 400,
                     decoration: BoxDecoration(
                         color: const Color.fromARGB(49, 158, 158, 158),
                         borderRadius: BorderRadius.circular(25)),
@@ -103,7 +102,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 25,
+                          height: 20,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -160,6 +159,72 @@ class HomePage extends StatelessWidget {
                             ),
                           ],
                         ),
+                        Text("Etiketler",
+                            style: GoogleFonts.montserrat(
+                                fontSize: 30, fontWeight: FontWeight.w400)),
+                        Row(
+                          children: [
+                            Card(
+                              color: Colors.lightBlue.shade400,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("#flutter",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.black)),
+                              ),
+                            ),
+                            Card(
+                              color: Colors.lightBlue.shade400,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("#dart",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.black)),
+                              ),
+                            ),
+                            Card(
+                              color: Colors.lightBlue.shade400,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("#opensource",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.black)),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Card(
+                              color: Colors.lightBlue.shade400,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("#firebase",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.black)),
+                              ),
+                            ),
+                            Card(
+                              color: Colors.lightBlue.shade400,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("#github",
+                                    style: GoogleFonts.montserrat(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.black)),
+                              ),
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),
@@ -175,10 +240,7 @@ class HomePage extends StatelessWidget {
                     child: Center(
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ProjectsPage()));
+                          Navigator.pushNamed(context, '/projects');
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),

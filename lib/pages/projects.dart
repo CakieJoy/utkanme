@@ -83,7 +83,7 @@ class ProjectsPage extends StatelessWidget {
                         ),
                         Text("MIT Lisansı |", style: GoogleFonts.montserrat()),
                         SizedBox(width: 5),
-                        Text("11 Commit", style: GoogleFonts.montserrat())
+                        Text("12 Commit", style: GoogleFonts.montserrat())
                       ],
                     ),
                     Center(
@@ -98,6 +98,29 @@ class ProjectsPage extends StatelessWidget {
                       ),
                     )
                   ],
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            width: 300,
+            height: 50,
+            decoration: BoxDecoration(
+                color: const Color.fromARGB(49, 158, 158, 158),
+                borderRadius: BorderRadius.circular(125)),
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, '/');
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Hakkımda",
+                      style: GoogleFonts.montserrat(
+                          fontSize: 20, fontWeight: FontWeight.w700)),
                 ),
               ),
             ),

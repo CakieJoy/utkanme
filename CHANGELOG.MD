@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [1.1.2] - 2025-03-06
+
+### Eklendi
+
+- URL yapısı eklendi.
+- Hashtag'ler eklendi
+- Projeler sayfasına Ana Sayfaya dönmek için buton eklendi.
+
 ## [1.1.1] - 2025-03-04
 
 ### Eklendi
