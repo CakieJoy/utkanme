@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -60,9 +61,44 @@ class HomePage extends StatelessWidget {
                       children: [
                         SizedBox(
                             height: 10), // SizedBox'ı Column'un içine alıyoruz
-                        Text("Utkan Aydın",
-                            style: GoogleFonts.poppins(
-                                fontSize: 30, fontWeight: FontWeight.bold)),
+                        Row(
+                          children: [
+                            Text("Utkan Aydın",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 30, fontWeight: FontWeight.bold)),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                try {
+                                  Get.snackbar("Kopyalandı!",
+                                      "Mobil için özel sayfamın linki kopyalandı.",
+                                      snackPosition: SnackPosition.BOTTOM,
+                                      icon: Icon(Icons.done_rounded));
+                                  //throw Exception("Bu bir test hatası");
+                                  Clipboard.setData(ClipboardData(
+                                      text: "https://utkan.me/#/mobile-page"));
+                                } catch (e) {
+                                  CosmosAlert.showAnimatedDialog(
+                                      context,
+                                      "Hata!",
+                                      "Bir sorun var gibi daha fazla detay için tarayıcı konsoluna bakın.");
+                                  print(e);
+                                }
+                              },
+                              child: SvgPicture.asset(
+                                "../../assets/copy.svg", // SVG dosyasının yolu
+                                width: 50, // İkon genişliği
+                                height: 18, // İkon yüksekliği
+                                colorFilter: const ColorFilter.mode(
+                                  Colors.deepOrange, // SVG rengini beyaz yap
+                                  BlendMode.srcIn,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         Text("CakieJoy olarakda bilinir.",
                             style: GoogleFonts.poppins(
                                 fontSize: 10, fontWeight: FontWeight.w100)),

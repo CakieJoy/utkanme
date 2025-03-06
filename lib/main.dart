@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:utkan_me/pages/home.dart';
+import 'package:utkan_me/pages/mobile.dart';
 
 import 'pages/projects.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomePage(),
         '/projects': (context) => ProjectsPage(),
+        '/mobile-page': (context) => MobilePage(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Utkan',

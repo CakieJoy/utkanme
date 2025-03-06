@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [1.1.3] - 2025-03-06
+
+### Eklendi
+
+- Mobil özel sayfa oluşturuldu
+- Mobil özel sayfanın URL'sini kopyalamaya yarayan bir buton eklendi
+- Mobil özel sayfada mobilde gereksiz sayılabilecek öğeler kaldırıldı
+- Mobil özel sayfada hashtaglerin boyutu küçültüldü
+
 ## [1.1.2] - 2025-03-06
 
 ### Eklendi
