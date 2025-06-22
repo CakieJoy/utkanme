@@ -43,14 +43,14 @@
 
 - Ana ekranın bazı tasarımsal hataları düzeltildi ve iyileştirildi
 
-## [1.0.2] - 2025-03-03
+## [1.1.1] - 2025-03-03
 
 ### Eklendi
 
 - Ana ekranda tasarımsal iyileştirilmeler yapıldı
 - Mail ile iletişim eklendi
 
-## [1.0.1] - 2025-02-25
+## [1.1.2] - 2025-02-25
 
 ### Eklendi
 
@@ -65,3 +65,13 @@
   `"Yakında bir blog sistemi kuracağız. Ama şimdilik beklemen gerekiyor"`  
   **yerine:**  
   `"Yakında TodoTap için Blog yazısı yayınlanacak!"` eklendi.
+
+## [1.1.3] - 2025-06-22
+
+### Eklendi
+
+- Projeler sayfası artık GitHub API'ya bağlandı
+
+### Düzeltildi
+
+- URL altyapısındaki "/#" sorunu kaldırıldı

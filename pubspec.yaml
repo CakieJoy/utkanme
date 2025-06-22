@@ -42,6 +42,7 @@ dependencies:
   icon_icons: ^1.0.4
   social_media_buttons: ^1.0.0
   flutter_svg: ^2.0.9
+  http: ^1.4.0
 
 dev_dependencies:
   flutter_test:

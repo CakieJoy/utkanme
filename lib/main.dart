@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:utkan_me/pages/home.dart';
 import 'package:utkan_me/pages/mobile.dart';
-
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'pages/projects.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
